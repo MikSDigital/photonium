@@ -1,0 +1,23 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="card-body">
+	<h1 class="ui header">Mi perfil</h1>
+	<table class="ui table">
+		<tr>
+			<th>Usuario</th>
+			<td>{{ user.username }}</td>
+		</tr>
+		<tr>
+			<th>Correo</th>
+			<td>{{ user.email }}</td>
+		</tr>
+		<tr>
+			<th>Nombre</th>
+			<td>{{ user.nombre }} {{ user.apellido }} &nbsp</td>
+		</tr>
+	</table>
+
+	<a href="{{ path('fos_user_profile_edit') }}" class="ui primary button">Editar</a>
+	<a href="{{ path('fos_user_change_password') }}" class="ui button">Cambiar clave</a>
+</div>
+

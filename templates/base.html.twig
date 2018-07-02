@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+
+	<link rel="stylesheet" type="text/css" href="{{ asset('../vendor/semantic/ui/dist/semantic.css') }}">
+    {% block stylesheets %}
+    {% endblock %}
+
+</head>
+<body>
+	<div class="ui top _fixed inverted big menu">
+		<div class="item">
+			<a href="{{ path('homepage') }}">
+			<h3>Portada</h3>
+			</a>
+		</div>
+		<a class="item" href="{{ path('producto_index') }}">Productos</a>
+		<a class="item" href="{{ path('categoria_index') }}">Categorias</a>
+		<a class="item" href="{{ path('semantic_ui') }}">Semantic UI</a>
+		<div class="ui right dropdown item">
+			Usuario <i class="dropdown icon"></i>
+			<div class="menu">
+					    {% if not app.user %}
+						<a class="item" href="{{ path('fos_user_security_login') }}">Iniciar sesion</a>
+						<a class="item" href="{{ path('fos_user_registration_register') }}">Registrarse</a>
+						{% else %}
+						<a class="item" href="{{ path('fos_user_security_logout') }}">Cerrar sesion</a>
+						<a class="item" href="{{ path('fos_user_profile_show') }}">Mi cuenta</a>
+						<a class="item" href="#">Preferencias</a>
+						{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="ui container">
+		{% block body %}
+		{% endblock %}
+	</div>
+
+	<script src="{{ asset('../vendor/components/jquery/jquery.min.js') }}"></script>
+	<script src="{{ asset('../vendor/semantic/ui/dist/semantic.js') }}"></script>
+	<script type="text/javascript">
+		$('.ui.dropdown').dropdown();
+	</script>
+	{% block javascripts %}
+	{% endblock %}
+</body>
+</html>

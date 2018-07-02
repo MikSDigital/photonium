@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categoria index{% endblock %}
+
+{% block body %}
+    <h1>Categorias</h1>
+
+    <a class="ui primary button" href="{{ path('categoria_new') }}">Nueva</a>
+
+    <table class="ui table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorium in categorias %}
+            <tr>
+                <td>{{ categorium.id }}</td>
+                <td>{{ categorium.nombre }}</td>
+                <td>
+                    <a class="ui button" href="{{ path('categoria_show', {'id': categorium.id}) }}">Ver</a>
+                    <a class="ui button" href="{{ path('categoria_edit', {'id': categorium.id}) }}">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

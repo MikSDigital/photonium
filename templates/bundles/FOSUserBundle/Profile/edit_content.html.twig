@@ -1,0 +1,18 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="card-body">
+	<h1 class="ui header">Datos de usuario</h1>
+	{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+	{{ form_row(form.nombre) }}
+	{{ form_row(form.apellido) }}
+	{{ form_row(form.username) }}
+	{{ form_widget(form) }}
+	<div>
+		<input formnovalidate class="ui primary button" type="submit" value="Guardar" />
+		<a href="{{ path('fos_user_profile_show') }}" class="ui button">Cancelar</a>
+	</div>
+	{{ form_end(form) }}
+</div>
+
+
+

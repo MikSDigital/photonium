@@ -1,0 +1,15 @@
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: App\Entity\Usuario
+    service:
+        mailer: fos_user.mailer.twig_swift
+    from_email:
+        address: "symfony_project@fosuser.com"
+        sender_name: "yo"
+    registration:
+        form:
+            type: App\Form\UserRegistrationType
+    profile:
+        form:
+            type: App\Form\UserProfileType
