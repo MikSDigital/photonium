@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}
+{% endblock %}
 
 {% block javascripts %}
 <script>
-
 	$(document).ready(
 			function() {
 
@@ -15,13 +15,10 @@
 					}
 				});
 
-				$('.example .message .close, .example .html .message .close')
-						.on(
-								'click',
-								function() {
-									$(this).closest('.message').transition(
-											'scale out');
-								});
+				$('ui.message.close, .html .message .close').on('click',
+						function() {
+							$(this).closest('.message').transition('fade');
+						});
 
 				$('.demo .example .menu a.item').on(
 						'click',
@@ -40,897 +37,925 @@
 
 {% block body %}
 <h1>Buttons</h1>
-<div class="ui demo">
-  <div class="ui button follow">Follow</div>
-  <div class="ui button">
-    View
-  </div>
-  <div class="ui primary button">
-    <i class="shop icon"></i>Add to Cart
-  </div>
-  <div class="ui secondary button">
-    <i class="save icon"></i>Save for Later
-  </div>
-  <div class="ui labeled icon button">
-    <i class="star icon"></i>Rate
-  </div>
-  <div class="ui basic button">
-    Basic
-  </div>
-  <div class="ui hidden divider"></div>
-  <div class="ui animated button">
-    <div class="visible content">
-      Horizontal
-    </div>
-    <div class="hidden content">
-      Hidden
-    </div>
-  </div>
-  <div class="ui vertical animated button">
-    <div class="visible content">
-      Vertical
-    </div>
-    <div class="hidden content">
-      Hidden
-    </div>
-  </div>
-  <div class="ui animated fade button">
-    <div class="visible content">
-      Fade In
-    </div>
-    <div class="hidden content">
-      Hidden
-    </div>
-  </div>
-  <div class="ui hidden divider"></div>
-  <div class="ui facebook button">
-    <i class="facebook icon"></i>Facebook
-  </div>
-  <div class="ui twitter button">
-    <i class="twitter icon"></i>Twitter
-  </div>
-  <div class="ui google plus button">
-    <i class="google plus icon"></i>Google Plus
-  </div>
-  <div class="ui circular icon facebook button">
-    <i class="facebook icon"></i>
-  </div>
-  <div class="ui circular icon twitter button">
-    <i class="twitter icon"></i>
-  </div>
-  <div class="ui circular icon google plus button">
-    <i class="google plus icon"></i>
-  </div>
-  <div class="ui hidden divider"></div>
-  <div class="ui buttons">
-    <div class="ui button">
-      1
-    </div>
-    <div class="ui button">
-      2
-    </div>
-    <div class="ui button">
-      3
-    </div>
-  </div>
-  <div class="ui buttons">
-    <div class="ui button">
-      Cancel
-    </div>
-    <div class="or"></div>
-    <div class="ui positive button">
-      Save
-    </div>
-  </div>
-  <div class="ui icon buttons">
-    <div class="ui button">
-      <i class="align left icon"></i>
-    </div>
-    <div class="ui button">
-      <i class="align center icon"></i>
-    </div>
-    <div class="ui button">
-      <i class="align right icon"></i>
-    </div>
-    <div class="ui button">
-      <i class="align justify icon"></i>
-    </div>
-  </div>
-  <div class="ui icon buttons">
-    <button class="ui button"><i class="play icon"></i></button><button class="ui button"><i class="pause icon"></i></button><button class="ui button"><i class="shuffle icon"></i></button>
-  </div>
-  <div class="ui hidden divider"></div>
-  <div class="ui mini button">
-    Mini
-  </div>
-  <div class="ui tiny button">
-    Tiny
-  </div>
-  <div class="ui small button">
-    Small
-  </div>
-  <div class="ui medium button">
-    Medium
-  </div>
-  <div class="ui large button">
-    Large
-  </div>
-  <div class="ui big button">
-    Big
-  </div>
-  <div class="ui huge button">
-    Huge
-  </div>
-  <div class="ui massive button">
-    Massive
-  </div>
-  <div class="ui hidden divider"></div>
-  <div class="ui blue button">
-    Blue
-  </div>
-  <div class="ui red button">
-    Red
-  </div>
-  <div class="ui teal button">
-    Teal
-  </div>
-  <div class="ui blue basic button">
-    Blue
-  </div>
-  <div class="ui red basic button">
-    Red
-  </div>
-  <div class="ui teal basic button">
-    Teal
-  </div>
-  <div class="ui inverted segment">
-    <div class="ui inverted button">
-      Inverted
-    </div>
-    <div class="ui inverted blue button">
-      Blue
-    </div>
-    <div class="ui inverted red button">
-      Red
-    </div>
-    <div class="ui inverted basic button">
-      Basic
-    </div>
-    <div class="ui inverted blue basic button">
-      Blue
-    </div>
-    <div class="ui inverted red basic button">
-      Red
-    </div>
-  </div>
-  <div class="ui hidden divider"></div>
-  <div class="ui vertical buttons">
-    <div class="ui button">
-      Feed
-    </div>
-    <div class="ui button">
-      Messages
-    </div>
-    <div class="ui button">
-      Events
-    </div>
-    <div class="ui button">
-      Photos
-    </div>
-  </div>
-  <div class="ui vertical buttons">
-    <div class="ui button">
-      1
-    </div>
-    <div class="ui button">
-      2
-    </div>
-    <div class="ui button">
-      3
-    </div>
-  </div>
-  <div class="ui vertical icon buttons">
-    <div class="ui button">
-      <i class="align left icon"></i>
-    </div>
-    <div class="ui button">
-      <i class="align center icon"></i>
-    </div>
-    <div class="ui button">
-      <i class="align right icon"></i>
-    </div>
-    <div class="ui button">
-      <i class="align justify icon"></i>
-    </div>
-  </div>
+<div class="ui demo segment">
+	<button class="ui button follow">Follow</button>
+	<div class="ui button">View</div>
+	<div class="ui primary button">
+		<i class="shop icon"></i>Add to Cart
+	</div>
+	<div class="ui secondary button">
+		<i class="save icon"></i>Save for Later
+	</div>
+	<div class="ui labeled icon button">
+		<i class="star icon"></i>Rate
+	</div>
+	<div class="ui basic button">Basic</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui animated button">
+		<div class="visible content">Horizontal</div>
+		<div class="hidden content">Hidden</div>
+	</div>
+	<div class="ui vertical animated button">
+		<div class="visible content">Vertical</div>
+		<div class="hidden content">Hidden</div>
+	</div>
+	<div class="ui animated fade button">
+		<div class="visible content">Fade In</div>
+		<div class="hidden content">Hidden</div>
+	</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui facebook button">
+		<i class="facebook icon"></i>Facebook
+	</div>
+	<div class="ui twitter button">
+		<i class="twitter icon"></i>Twitter
+	</div>
+	<div class="ui google plus button">
+		<i class="google plus icon"></i>Google Plus
+	</div>
+	<div class="ui circular icon facebook button">
+		<i class="facebook icon"></i>
+	</div>
+	<div class="ui circular icon twitter button">
+		<i class="twitter icon"></i>
+	</div>
+	<div class="ui circular icon google plus button">
+		<i class="google plus icon"></i>
+	</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui buttons">
+		<div class="ui button">1</div>
+		<div class="ui button">2</div>
+		<div class="ui button">3</div>
+	</div>
+	<div class="ui buttons">
+		<div class="ui button">Cancel</div>
+		<div class="or"></div>
+		<div class="ui positive button">Save</div>
+	</div>
+	<div class="ui icon buttons">
+		<div class="ui button">
+			<i class="align left icon"></i>
+		</div>
+		<div class="ui button">
+			<i class="align center icon"></i>
+		</div>
+		<div class="ui button">
+			<i class="align right icon"></i>
+		</div>
+		<div class="ui button">
+			<i class="align justify icon"></i>
+		</div>
+	</div>
+	<div class="ui icon buttons">
+		<button class="ui button">
+			<i class="play icon"></i>
+		</button>
+		<button class="ui button">
+			<i class="pause icon"></i>
+		</button>
+		<button class="ui button">
+			<i class="shuffle icon"></i>
+		</button>
+	</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui mini button">Mini</div>
+	<div class="ui tiny button">Tiny</div>
+	<div class="ui small button">Small</div>
+	<div class="ui medium button">Medium</div>
+	<div class="ui large button">Large</div>
+	<div class="ui big button">Big</div>
+	<div class="ui huge button">Huge</div>
+	<div class="ui massive button">Massive</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui blue button">Blue</div>
+	<div class="ui red button">Red</div>
+	<div class="ui teal button">Teal</div>
+	<div class="ui blue basic button">Blue</div>
+	<div class="ui red basic button">Red</div>
+	<div class="ui teal basic button">Teal</div>
+	<div class="ui inverted segment">
+		<div class="ui inverted button">Inverted</div>
+		<div class="ui inverted blue button">Blue</div>
+		<div class="ui inverted red button">Red</div>
+		<div class="ui inverted basic button">Basic</div>
+		<div class="ui inverted blue basic button">Blue</div>
+		<div class="ui inverted red basic button">Red</div>
+	</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui vertical buttons">
+		<div class="ui button">Feed</div>
+		<div class="ui button">Messages</div>
+		<div class="ui button">Events</div>
+		<div class="ui button">Photos</div>
+	</div>
+	<div class="ui vertical buttons">
+		<div class="ui button">1</div>
+		<div class="ui button">2</div>
+		<div class="ui button">3</div>
+	</div>
+	<div class="ui vertical icon buttons">
+		<div class="ui button">
+			<i class="align left icon"></i>
+		</div>
+		<div class="ui button">
+			<i class="align center icon"></i>
+		</div>
+		<div class="ui button">
+			<i class="align right icon"></i>
+		</div>
+		<div class="ui button">
+			<i class="align justify icon"></i>
+		</div>
+	</div>
 </div>
 
 <h1>Inputs</h1>
-<div class="ui action left icon input">
-  <i class="search icon"></i><input placeholder="Search..." type="text">
-  <div class="ui teal button">
-    Search
-  </div>
-</div>
-<div class="ui hidden divider"></div>
-<div class="ui corner labeled input">
-  <input placeholder="Required Field" type="text">
-  <div class="ui corner label">
-    <i class="asterisk icon"></i>
-  </div>
-</div>
-<div class="ui hidden divider"></div>
-<div class="ui labeled right icon input">
-  <div class="ui label">
-    http:// 
-  </div>
-  <input placeholder="domain.com" type="text"><i class="add circle link icon"></i>
-</div>
-<div class="ui hidden divider"></div>
-<div class="ui labeled input">
-  <a class="ui label"> Label </a><input placeholder="Placeholder..." type="text">
-</div>
-<div class="ui hidden divider"></div>
-<div class="ui right labeled input">
-  <input placeholder="Placeholder..." type="text"><a class="ui label"> Label </a>
+<div class="ui segment">
+	<div class="ui action left icon input">
+		<i class="search icon"></i><input placeholder="Search..." type="text">
+		<div class="ui teal button">Search</div>
+	</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui corner labeled input">
+		<input placeholder="Required Field" type="text">
+		<div class="ui corner label">
+			<i class="asterisk icon"></i>
+		</div>
+	</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui labeled right icon input">
+		<div class="ui label">http://</div>
+		<input placeholder="domain.com" type="text"><i
+			class="add circle link icon"></i>
+	</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui labeled input">
+		<a class="ui label"> Label </a><input placeholder="Placeholder..."
+			type="text">
+	</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui right labeled input">
+		<input placeholder="Placeholder..." type="text"><a
+			class="ui label"> Label </a>
+	</div>
 </div>
 
 <h1>Labels</h1>
-<div class="ui image label">
-  <img src="/static/kitchen-sink/images/avatar/small/justen.jpg"> email@address.com<i class="delete icon"></i>
-</div>
-<a class="ui teal image label"> Some Name<span class="detail">Group</span></a>
-<a class="ui label"><i class="mail icon"></i> Icon</a>
-<a class="ui tag label">Tag</a>
-<div class="ui empty circular label"></div>
-<div class="ui black empty circular label"></div>
-<div class="ui teal empty circular label"></div>
-<form class="ui fluid form">
-  <div class="two fields">
-    <div class="field">
-      <input placeholder="First name" type="text">
-      <div class="ui pointing label">
-        Pointing Label
-      </div>
-    </div>
-    <div class="field" placeholder="Last Name">
-      <div class="ui pointing below label">
-        Pointing below label
-      </div>
-      <input type="text">
-    </div>
-  </div>
-</form>
-<div class="ui hidden divider"></div>
-<div class="ui two item menu">
-  <a class="item"> Item</a><a class="item"> Item
-    <div class="floating ui teal label">
-      141
-    </div>
-  </a>
-</div>
-<div class="ui hidden divider"></div>
-<div class="ui left floated tiny image">
-  <a class="ui left red corner label"><i class="heart icon"></i></a><img src="/static/kitchen-sink/images/wireframe/square-image.png">
-</div>
-<div class="ui left floated tiny image">
-  <a class="ui left yellow corner label"><i class="star icon"></i></a><img src="/static/kitchen-sink/images/wireframe/square-image.png">
-</div>
-<div class="ui left floated tiny image">
-  <a class="ui right corner label"><i class="close icon"></i></a><img src="/static/kitchen-sink/images/wireframe/square-image.png">
-</div>
-<div class="ui hidden clearing divider"></div>
 <div class="ui segment">
-  <div class="ui top attached label">
-    Top Labeled
-  </div>
-  <div class="ui bottom attached label">
-    Bottom Labeled
-  </div>
-</div>
-<div class="ui segment">
-  <div class="ui top left attached label">
-    Top Left
-  </div>
-  <div class="ui top right attached label">
-    Top Right
-  </div>
-  <div class="ui bottom left attached label">
-    Bottom Left
-  </div>
-  <div class="ui bottom right attached label">
-    Bottom Right
-  </div>
-</div>
-<div class="ui segment">
-  <a class="ui ribbon label">Ribbon</a>
+	<div class="ui image label">
+		<img src="/static/kitchen-sink/images/avatar/small/justen.jpg">
+		email@address.com<i class="delete icon"></i>
+	</div>
+	<a class="ui teal image label"> Some Name<span class="detail">Group</span></a>
+	<a class="ui label"><i class="mail icon"></i> Icon</a> <a
+		class="ui tag label">Tag</a>
+	<div class="ui empty circular label"></div>
+	<div class="ui black empty circular label"></div>
+	<div class="ui teal empty circular label"></div>
+	<form class="ui fluid form">
+		<div class="two fields">
+			<div class="field">
+				<input placeholder="First name" type="text">
+				<div class="ui pointing label">Pointing Label</div>
+			</div>
+			<div class="field" placeholder="Last Name">
+				<div class="ui pointing below label">Pointing below label</div>
+				<input type="text">
+			</div>
+		</div>
+	</form>
+	<div class="ui hidden divider"></div>
+	<div class="ui two item menu">
+		<a class="item"> Item</a><a class="item"> Item
+			<div class="floating ui teal label">141</div>
+		</a>
+	</div>
+	<div class="ui hidden divider"></div>
+	<div class="ui left floated tiny image">
+		<a class="ui left red corner label"><i class="heart icon"></i></a><img
+			src="/static/kitchen-sink/images/wireframe/square-image.png">
+	</div>
+	<div class="ui left floated tiny image">
+		<a class="ui left yellow corner label"><i class="star icon"></i></a><img
+			src="/static/kitchen-sink/images/wireframe/square-image.png">
+	</div>
+	<div class="ui left floated tiny image">
+		<a class="ui right corner label"><i class="close icon"></i></a><img
+			src="/static/kitchen-sink/images/wireframe/square-image.png">
+	</div>
+	<div class="ui hidden clearing divider"></div>
+	<div class="ui segment">
+		<div class="ui top attached label">Top Labeled</div>
+		<div class="ui bottom attached label">Bottom Labeled</div>
+	</div>
+	<div class="ui segment">
+		<div class="ui top left attached label">Top Left</div>
+		<div class="ui top right attached label">Top Right</div>
+		<div class="ui bottom left attached label">Bottom Left</div>
+		<div class="ui bottom right attached label">Bottom Right</div>
+	</div>
+	<div class="ui segment">
+		<a class="ui ribbon label">Ribbon</a>
+	</div>
+
 </div>
 
 <h1>Messages</h1>
-<div class="ui message">
-  <i class="close icon"></i> Closable message
-</div>
-<div class="ui warning icon message">
-  <div class="content">
-    <div class="header">
-      Warning Message
-    </div>
-    <ul class="list">
-      <li>
-        List item
-      </li>
-      <li>
-        List item
-      </li>
-    </ul>
-  </div>
-</div>
-<div class="ui message">
-  <div class="header">
-    List Message
-  </div>
-  <ul class="list">
-    <li>
-      List item 1
-    </li>
-    <li>
-      List item 2
-    </li>
-    <li>
-      List item 3
-    </li>
-  </ul>
-</div>
-<div class="ui info message">
-  <div class="header">
-    Info Message
-  </div>
-  <p>
-    Example description
-  </p>
-</div>
-<div class="ui success message">
-  <div class="content">
-    <div class="header">
-      Positive Message
-    </div>
-    <p>
-      Example description
-    </p>
-  </div>
-</div>
-<div class="ui icon error message">
-  <i class="attention circle icon"></i>
-  <div class="content">
-    <div class="header">
-      Negative Message
-    </div>
-    <p>
-      Example description
-    </p>
-  </div>
-</div>
-<div class="ui top attached message">
-  Top attached
-</div>
-<div class="ui bottom attached message">
-  Bottom attached
+<div class="ui segment">
+	<div class="ui message">
+		<i class="close icon"></i> Closable message
+	</div>
+	<div class="ui warning icon message">
+		<div class="content">
+			<div class="header">Warning Message</div>
+			<ul class="list">
+				<li>List item</li>
+				<li>List item</li>
+			</ul>
+		</div>
+	</div>
+	<div class="ui message">
+		<div class="header">List Message</div>
+		<ul class="list">
+			<li>List item 1</li>
+			<li>List item 2</li>
+			<li>List item 3</li>
+		</ul>
+	</div>
+	<div class="ui info message">
+		<div class="header">Info Message</div>
+		<p>Example description</p>
+	</div>
+	<div class="ui success message">
+		<div class="content">
+			<div class="header">Positive Message</div>
+			<p>Example description</p>
+		</div>
+	</div>
+	<div class="ui icon error message">
+		<i class="attention circle icon"></i>
+		<div class="content">
+			<div class="header">Negative Message</div>
+			<p>Example description</p>
+		</div>
+	</div>
+	<div class="ui top attached message">Top attached</div>
+	<div class="ui bottom attached message">Bottom attached</div>
 </div>
 
 <h1>Tables</h1>
-<table class="ui celled striped table">
-  <thead>
-    <tr><th colspan="3">
-      Files 
-    </th>
-  </tr></thead>
-  <tbody>
-    <tr>
-      <td class="disabled">
-        <i class="folder icon"></i> folder 
-      </td>
-      <td>
-        Comment
-      </td>
-      <td class="right aligned collapsing">
-        10 hours ago
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <i class="folder icon"></i> folder2 
-      </td>
-      <td>
-        Comment
-      </td>
-      <td class="right aligned">
-        10 hours ago
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <i class="folder icon"></i> folder3 
-      </td>
-      <td>
-        Comment
-      </td>
-      <td class="right aligned">
-        10 hours ago
-      </td>
-    </tr>
-    <tr>
-      <td class="collapsing">
-        <i class="file outline icon"></i> package.json 
-      </td>
-      <td>
-        Comment
-      </td>
-      <td class="right aligned">
-        10 hours ago
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <i class="file outline icon"></i> Gruntfile.js 
-      </td>
-      <td>
-        Comment
-      </td>
-      <td class="right aligned">
-        10 hours ago
-      </td>
-    </tr>
-  </tbody>
-</table>
-<table class="ui definition table">
-  <thead>
-    <tr><th></th>
-    <th>
-      Header 1
-    </th>
-    <th>
-      Header 2
-    </th>
-  </tr></thead>
-  <tbody>
-    <tr>
-      <td>
-        Definition
-      </td>
-      <td>
-        1A
-      </td>
-      <td>
-        1B
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Definition
-      </td>
-      <td>
-        2A
-      </td>
-      <td>
-        2B
-      </td>
-    </tr>
-  </tbody>
-</table>
-<table class="ui compact celled definition table">
-  <thead>
-    <tr>
-      <th></th>
-      <th>
-        Name
-      </th>
-      <th>
-        Registration Date
-      </th>
-      <th>
-        E-mail address
-      </th>
-      <th>
-        Premium Plan
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="collapsing">
-        <div class="ui fitted slider checkbox">
-          <input type="checkbox" tabindex="0" class="hidden"><label></label>
-        </div>
-      </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="collapsing">
-        <div class="ui fitted slider checkbox">
-          <input type="checkbox" tabindex="0" class="hidden"><label></label>
-        </div>
-      </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td class="collapsing">
-        <div class="ui fitted slider checkbox">
-          <input type="checkbox" tabindex="0" class="hidden"><label></label>
-        </div>
-      </td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-  <tfoot class="full-width">
-    <tr>
-      <th></th>
-      <th colspan="4">
-        <div class="ui right floated small primary labeled icon button">
-          <i class="user icon"></i> Primary 
-        </div>
-        <div class="ui small button">
-          Button 
-        </div>
-        <div class="ui small disabled button">
-          Disabled 
-        </div>
-      </th>
-    </tr>
-  </tfoot>
-</table>
-<table class="ui celled table">
-  <thead>
-    <tr>
-      <th>
-        Name
-      </th>
-      <th>
-        Status
-      </th>
-      <th>
-        Notes
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        User 1
-      </td>
-      <td>
-        Value
-      </td>
-      <td>
-        Comment
-      </td>
-    </tr>
-    <tr class="active">
-      <td>
-        User 1
-      </td>
-      <td>
-        Selected
-      </td>
-      <td>
-        Data
-      </td>
-    </tr>
-    <tr class="disabled">
-      <td>
-        User 1
-      </td>
-      <td>
-        Value
-      </td>
-      <td>
-        Comment
-      </td>
-    </tr>
-    <tr>
-      <td class="active">
-        User 2
-      </td>
-      <td>
-        Value
-      </td>
-      <td>
-        Data
-      </td>
-    </tr>
-    <tr>
-      <td>
-        User 1
-      </td>
-      <td>
-        Value
-      </td>
-      <td class="warning">
-        <i class="attention icon"></i> Warning 
-      </td>
-    </tr>
-    <tr>
-      <td>
-        User 3
-      </td>
-      <td>
-        Value
-      </td>
-      <td class="negative">
-        Data
-      </td>
-    </tr>
-    <tr>
-      <td>
-        User 1
-      </td>
-      <td>
-        Value
-      </td>
-      <td class="positive">
-        <i class="icon close"></i> Positive 
-      </td>
-    </tr>
-    <tr class="warning">
-      <td>
-        User 2
-      </td>
-      <td>
-        <i class="attention icon"></i> Warning 
-      </td>
-      <td>
-        Data
-      </td>
-    </tr>
-    <tr class="positive">
-      <td>
-        User 2
-      </td>
-      <td>
-        <i class="icon checkmark"></i> Positive
-      </td>
-      <td>
-        Data
-      </td>
-    </tr>
-    <tr class="negative">
-      <td>
-        User 2
-      </td>
-      <td>
-        Value
-      </td>
-      <td>
-        Data
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="ui segment">
+	<table class="ui celled striped table">
+		<thead>
+			<tr>
+				<th colspan="3">Files</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="disabled"><i class="folder icon"></i> folder</td>
+				<td>Comment</td>
+				<td class="right aligned collapsing">10 hours ago</td>
+			</tr>
+			<tr>
+				<td><i class="folder icon"></i> folder2</td>
+				<td>Comment</td>
+				<td class="right aligned">10 hours ago</td>
+			</tr>
+			<tr>
+				<td><i class="folder icon"></i> folder3</td>
+				<td>Comment</td>
+				<td class="right aligned">10 hours ago</td>
+			</tr>
+			<tr>
+				<td class="collapsing"><i class="file outline icon"></i>
+					package.json</td>
+				<td>Comment</td>
+				<td class="right aligned">10 hours ago</td>
+			</tr>
+			<tr>
+				<td><i class="file outline icon"></i> Gruntfile.js</td>
+				<td>Comment</td>
+				<td class="right aligned">10 hours ago</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="ui definition table">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Header 1</th>
+				<th>Header 2</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Definition</td>
+				<td>1A</td>
+				<td>1B</td>
+			</tr>
+			<tr>
+				<td>Definition</td>
+				<td>2A</td>
+				<td>2B</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="ui compact celled definition table">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Registration Date</th>
+				<th>E-mail address</th>
+				<th>Premium Plan</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="collapsing">
+					<div class="ui fitted slider checkbox">
+						<input type="checkbox" tabindex="0" class="hidden"><label></label>
+					</div>
+				</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="collapsing">
+					<div class="ui fitted slider checkbox">
+						<input type="checkbox" tabindex="0" class="hidden"><label></label>
+					</div>
+				</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td class="collapsing">
+					<div class="ui fitted slider checkbox">
+						<input type="checkbox" tabindex="0" class="hidden"><label></label>
+					</div>
+				</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+		<tfoot class="full-width">
+			<tr>
+				<th></th>
+				<th colspan="4">
+					<div class="ui right floated small primary labeled icon button">
+						<i class="user icon"></i> Primary
+					</div>
+					<div class="ui small button">Button</div>
+					<div class="ui small disabled button">Disabled</div>
+				</th>
+			</tr>
+		</tfoot>
+	</table>
+	<table class="ui celled table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Status</th>
+				<th>Notes</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>User 1</td>
+				<td>Value</td>
+				<td>Comment</td>
+			</tr>
+			<tr class="active">
+				<td>User 1</td>
+				<td>Selected</td>
+				<td>Data</td>
+			</tr>
+			<tr class="disabled">
+				<td>User 1</td>
+				<td>Value</td>
+				<td>Comment</td>
+			</tr>
+			<tr>
+				<td class="active">User 2</td>
+				<td>Value</td>
+				<td>Data</td>
+			</tr>
+			<tr>
+				<td>User 1</td>
+				<td>Value</td>
+				<td class="warning"><i class="attention icon"></i> Warning</td>
+			</tr>
+			<tr>
+				<td>User 3</td>
+				<td>Value</td>
+				<td class="negative">Data</td>
+			</tr>
+			<tr>
+				<td>User 1</td>
+				<td>Value</td>
+				<td class="positive"><i class="icon close"></i> Positive</td>
+			</tr>
+			<tr class="warning">
+				<td>User 2</td>
+				<td><i class="attention icon"></i> Warning</td>
+				<td>Data</td>
+			</tr>
+			<tr class="positive">
+				<td>User 2</td>
+				<td><i class="icon checkmark"></i> Positive</td>
+				<td>Data</td>
+			</tr>
+			<tr class="negative">
+				<td>User 2</td>
+				<td>Value</td>
+				<td>Data</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
 <h1>Menus</h1>
-<div class="ui three item menu">
-  <a class="active item"> A</a><a class="item"> B</a><a class="item"> C</a>
-</div>
-<div class="ui vertical demo menu">
-  <a class="active item"> A</a><a class="item"> B
-    <div class="ui label">
-      1
-    </div>
-  </a>
-  <div class="item">
-    <div class="ui transparent icon input">
-      <input placeholder="Search..." type="text"><i class="search icon"></i>
-    </div>
-  </div>
-</div>
-<div class="ui tabular menu">
-  <a class="active item"> Tab</a><a class="item"> Tab</a>
-</div>
-<div class="ui text demo menu">
-  <a class="active item"> A</a><a class="item"> B</a><a class="item"> C</a>
-</div>
-<div class="ui secondary demo menu">
-  <a class="active item"> A</a><a class="item"> B</a><a class="item"> C</a>
-</div>
-<div class="ui secondary pointing three item demo menu">
-  <a class="active item"> A</a><a class="item"> B</a><a class="item"> C</a>
-</div>
-<div class="ui secondary vertical demo menu">
-  <a class="active item"> A</a><a class="item"> B</a><a class="item"> C</a>
-</div>
-<div class="ui secondary pointing vertical demo menu">
-  <a class="active item"> A</a><a class="item"> B</a><a class="item"> C</a>
+<div class="ui segment">
+	<div class="ui three item menu">
+		<a class="active item"> A</a><a class="item"> B</a><a class="item">
+			C</a>
+	</div>
+	<div class="ui vertical demo menu">
+		<a class="active item"> A</a><a class="item"> B
+			<div class="ui label">1</div>
+		</a>
+		<div class="item">
+			<div class="ui transparent icon input">
+				<input placeholder="Search..." type="text"><i
+					class="search icon"></i>
+			</div>
+		</div>
+	</div>
+	<div class="ui tabular menu">
+		<a class="active item"> Tab</a><a class="item"> Tab</a>
+	</div>
+	<div class="ui text demo menu">
+		<a class="active item"> A</a><a class="item"> B</a><a class="item">
+			C</a>
+	</div>
+	<div class="ui secondary demo menu">
+		<a class="active item"> A</a><a class="item"> B</a><a class="item">
+			C</a>
+	</div>
+	<div class="ui secondary pointing three item demo menu">
+		<a class="active item"> A</a><a class="item"> B</a><a class="item">
+			C</a>
+	</div>
+	<div class="ui secondary vertical demo menu">
+		<a class="active item"> A</a><a class="item"> B</a><a class="item">
+			C</a>
+	</div>
+	<div class="ui secondary pointing vertical demo menu">
+		<a class="active item"> A</a><a class="item"> B</a><a class="item">
+			C</a>
+	</div>
 </div>
 
 <h1>Forms</h1>
 <div class="ui form segment">
-  <div class="two fields">
-    <div class="field">
-<label>Selection Dropdown</label>
-<div class="ui selection dropdown" tabindex="0">
-  <div class="default text">
-    Select
-  </div>
-  <i class="dropdown icon"></i><input name="hidden-field" type="hidden">
-  <div class="menu" tabindex="-1">
-    <div class="item" data-value="1">
-      Choice 1
-    </div>
-    <div class="item" data-value="2">
-      Choice 2
-    </div>
-  </div>
-</div>
-    </div>
-    <div class="field">
-<label>HTML Select</label><select>
-  <option value="">
-    Select
-  </option>
-  <option value="1">
-    1
-  </option>
-  <option value="2">
-    2
-  </option>
-</select>
-    </div>
-  </div>
-  <div class="field">
-    <label>Text Area</label><textarea></textarea>
-  </div>
-  <div class="three required fields">
-    <div class="field">
-<label>Required Input</label><input placeholder="Text Input" type="text">
-    </div>
-    <div class="field">
-<label>Required Input</label><input placeholder="Text Input" type="text">
-    </div>
-    <div class="disabled field">
-<label>Disabled Input</label><input disabled="disabled" placeholder="Text Input" type="text">
-    </div>
-  </div>
-  <div class="grouped fields">
-    <label>Radio Selection</label>
-    <div class="field">
-<div class="ui radio checkbox">
-  <input checked="checked" name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio Option</label>
-</div>
-    </div>
-    <div class="field">
-<div class="ui radio checkbox">
-  <input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio Option</label>
-</div>
-    </div>
-    <div class="field">
-<div class="ui radio checkbox">
-  <input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio Option</label>
-</div>
-    </div>
-    <div class="field">
-<div class="ui radio checkbox">
-  <input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio Option</label>
-</div>
-    </div>
-  </div>
-  <div class="field">
-    <label>Password</label>
-    <div class="ui left icon input">
-<i class="lock icon"></i><input type="password">
-    </div>
-  </div>
-  <div class="inline field">
-    <div class="ui checkbox">
-<input type="checkbox" tabindex="0" class="hidden"><label>Checkbox</label>
-    </div>
-  </div>
-  <div class="grouped inline fields">
-    <label>Inline Radio Selection</label>
-    <div class="field">
-<div class="ui radio checkbox">
-  <input checked="checked" name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio Option</label>
-</div>
-    </div>
-    <div class="field">
-<div class="ui radio checkbox">
-  <input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio Option</label>
-</div>
-    </div>
-    <div class="field">
-<div class="ui radio checkbox">
-  <input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio Option</label>
-</div>
-    </div>
-    <div class="field">
-<div class="ui radio checkbox">
-  <input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio Option</label>
-</div>
-    </div>
-  </div>
-  <div class="inline fields">
-    <div class="field">
-<label>Multiple Inline Fields</label><input placeholder="(xxx)" type="text">
-    </div>
-    <div class="field">
-<input placeholder="xxx" type="text">
-    </div>
-    <div class="field">
-<input placeholder="xxxx" type="text">
-    </div>
-  </div>
-  <div class="inline field">
-    <label>Inline Field</label><input placeholder="Text Input" type="text">
-  </div>
-  <h4 class="ui header">
-    Sub-header
-  </h4>
-  <div class="field">
-    <div class="ui toggle checkbox">
-<input name="privacy" type="checkbox" tabindex="0" class="hidden"><label>Toggle</label>
-    </div>
-  </div>
-  <div class="field">
-    <div class="ui slider checkbox">
-<input name="top-posts" type="checkbox" tabindex="0" class="hidden"><label>Option</label>
-    </div>
-  </div>
-  <div class="ui submit button">
-    Submit
-  </div>
-</div>
-<div class="ui warning form segment">
-  <div class="ui warning message">
-    <div class="header">
-Warning Message
-    </div>
-    <ul class="list">
-<li>
-  Problem #1
-</li>
-<li>
-  Problem #2
-</li>
-    </ul>
-  </div>
-  <div class="two fields">
-    <div class="field">
-<label>Input</label><input placeholder="Text Input" type="text">
-    </div>
-    <div class="field">
-<label>Input</label><input placeholder="Text Input" type="text">
-    </div>
-  </div>
-  <div class="ui submit button">
-    Submit
-  </div>
-</div>
-<div class="ui error form segment">
-  <div class="ui error message">
-    <div class="header">
-Error Message
-    </div>
-    <p>
-Error message long description
-    </p>
-  </div>
-  <div class="two fields">
-    <div class="field error">
-<label>Errored Input</label><input placeholder="Text Input" type="text">
-    </div>
-    <div class="field error">
-<label>Errored Input</label><input placeholder="Text Input" type="text">
-    </div>
-  </div>
-  <div class="ui submit button">
-    Submit
-  </div>
+	<div class="two fields">
+		<div class="field">
+			<label>Selection Dropdown</label>
+			<div class="ui selection dropdown" tabindex="0">
+				<div class="default text">Select</div>
+				<i class="dropdown icon"></i><input name="hidden-field"
+					type="hidden">
+				<div class="menu" tabindex="-1">
+					<div class="item" data-value="1">Choice 1</div>
+					<div class="item" data-value="2">Choice 2</div>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+			<label>HTML Select</label><select>
+				<option value="">Select</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+			</select>
+		</div>
+	</div>
+
+
+	<div class="ui form">
+		<div class="field">
+			<label>Country</label> <select multiple="" class="ui dropdown">
+				<option value="">Select Country</option>
+				<option value="AF">Afghanistan</option>
+				<option value="AX">Åland Islands</option>
+				<option value="AL">Albania</option>
+				<option value="DZ">Algeria</option>
+				<option value="AS">American Samoa</option>
+				<option value="AD">Andorra</option>
+				<option value="AO">Angola</option>
+				<option value="AI">Anguilla</option>
+				<option value="AQ">Antarctica</option>
+				<option value="AG">Antigua and Barbuda</option>
+				<option value="AR">Argentina</option>
+				<option value="AM">Armenia</option>
+				<option value="AW">Aruba</option>
+				<option value="AU">Australia</option>
+				<option value="AT">Austria</option>
+				<option value="AZ">Azerbaijan</option>
+				<option value="BS">Bahamas</option>
+				<option value="BH">Bahrain</option>
+				<option value="BD">Bangladesh</option>
+				<option value="BB">Barbados</option>
+				<option value="BY">Belarus</option>
+				<option value="BE">Belgium</option>
+				<option value="BZ">Belize</option>
+				<option value="BJ">Benin</option>
+				<option value="BM">Bermuda</option>
+				<option value="BT">Bhutan</option>
+				<option value="BO">Bolivia, Plurinational State of</option>
+				<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+				<option value="BA">Bosnia and Herzegovina</option>
+				<option value="BW">Botswana</option>
+				<option value="BV">Bouvet Island</option>
+				<option value="BR">Brazil</option>
+				<option value="IO">British Indian Ocean Territory</option>
+				<option value="BN">Brunei Darussalam</option>
+				<option value="BG">Bulgaria</option>
+				<option value="BF">Burkina Faso</option>
+				<option value="BI">Burundi</option>
+				<option value="KH">Cambodia</option>
+				<option value="CM">Cameroon</option>
+				<option value="CA">Canada</option>
+				<option value="CV">Cape Verde</option>
+				<option value="KY">Cayman Islands</option>
+				<option value="CF">Central African Republic</option>
+				<option value="TD">Chad</option>
+				<option value="CL">Chile</option>
+				<option value="CN">China</option>
+				<option value="CX">Christmas Island</option>
+				<option value="CC">Cocos (Keeling) Islands</option>
+				<option value="CO">Colombia</option>
+				<option value="KM">Comoros</option>
+				<option value="CG">Congo</option>
+				<option value="CD">Congo, the Democratic Republic of the</option>
+				<option value="CK">Cook Islands</option>
+				<option value="CR">Costa Rica</option>
+				<option value="CI">Côte d'Ivoire</option>
+				<option value="HR">Croatia</option>
+				<option value="CU">Cuba</option>
+				<option value="CW">Curaçao</option>
+				<option value="CY">Cyprus</option>
+				<option value="CZ">Czech Republic</option>
+				<option value="DK">Denmark</option>
+				<option value="DJ">Djibouti</option>
+				<option value="DM">Dominica</option>
+				<option value="DO">Dominican Republic</option>
+				<option value="EC">Ecuador</option>
+				<option value="EG">Egypt</option>
+				<option value="SV">El Salvador</option>
+				<option value="GQ">Equatorial Guinea</option>
+				<option value="ER">Eritrea</option>
+				<option value="EE">Estonia</option>
+				<option value="ET">Ethiopia</option>
+				<option value="FK">Falkland Islands (Malvinas)</option>
+				<option value="FO">Faroe Islands</option>
+				<option value="FJ">Fiji</option>
+				<option value="FI">Finland</option>
+				<option value="FR">France</option>
+				<option value="GF">French Guiana</option>
+				<option value="PF">French Polynesia</option>
+				<option value="TF">French Southern Territories</option>
+				<option value="GA">Gabon</option>
+				<option value="GM">Gambia</option>
+				<option value="GE">Georgia</option>
+				<option value="DE">Germany</option>
+				<option value="GH">Ghana</option>
+				<option value="GI">Gibraltar</option>
+				<option value="GR">Greece</option>
+				<option value="GL">Greenland</option>
+				<option value="GD">Grenada</option>
+				<option value="GP">Guadeloupe</option>
+				<option value="GU">Guam</option>
+				<option value="GT">Guatemala</option>
+				<option value="GG">Guernsey</option>
+				<option value="GN">Guinea</option>
+				<option value="GW">Guinea-Bissau</option>
+				<option value="GY">Guyana</option>
+				<option value="HT">Haiti</option>
+				<option value="HM">Heard Island and McDonald Islands</option>
+				<option value="VA">Holy See (Vatican City State)</option>
+				<option value="HN">Honduras</option>
+				<option value="HK">Hong Kong</option>
+				<option value="HU">Hungary</option>
+				<option value="IS">Iceland</option>
+				<option value="IN">India</option>
+				<option value="ID">Indonesia</option>
+				<option value="IR">Iran, Islamic Republic of</option>
+				<option value="IQ">Iraq</option>
+				<option value="IE">Ireland</option>
+				<option value="IM">Isle of Man</option>
+				<option value="IL">Israel</option>
+				<option value="IT">Italy</option>
+				<option value="JM">Jamaica</option>
+				<option value="JP">Japan</option>
+				<option value="JE">Jersey</option>
+				<option value="JO">Jordan</option>
+				<option value="KZ">Kazakhstan</option>
+				<option value="KE">Kenya</option>
+				<option value="KI">Kiribati</option>
+				<option value="KP">Korea, Democratic People's Republic of</option>
+				<option value="KR">Korea, Republic of</option>
+				<option value="KW">Kuwait</option>
+				<option value="KG">Kyrgyzstan</option>
+				<option value="LA">Lao People's Democratic Republic</option>
+				<option value="LV">Latvia</option>
+				<option value="LB">Lebanon</option>
+				<option value="LS">Lesotho</option>
+				<option value="LR">Liberia</option>
+				<option value="LY">Libya</option>
+				<option value="LI">Liechtenstein</option>
+				<option value="LT">Lithuania</option>
+				<option value="LU">Luxembourg</option>
+				<option value="MO">Macao</option>
+				<option value="MK">Macedonia, the former Yugoslav Republic
+					of</option>
+				<option value="MG">Madagascar</option>
+				<option value="MW">Malawi</option>
+				<option value="MY">Malaysia</option>
+				<option value="MV">Maldives</option>
+				<option value="ML">Mali</option>
+				<option value="MT">Malta</option>
+				<option value="MH">Marshall Islands</option>
+				<option value="MQ">Martinique</option>
+				<option value="MR">Mauritania</option>
+				<option value="MU">Mauritius</option>
+				<option value="YT">Mayotte</option>
+				<option value="MX">Mexico</option>
+				<option value="FM">Micronesia, Federated States of</option>
+				<option value="MD">Moldova, Republic of</option>
+				<option value="MC">Monaco</option>
+				<option value="MN">Mongolia</option>
+				<option value="ME">Montenegro</option>
+				<option value="MS">Montserrat</option>
+				<option value="MA">Morocco</option>
+				<option value="MZ">Mozambique</option>
+				<option value="MM">Myanmar</option>
+				<option value="NA">Namibia</option>
+				<option value="NR">Nauru</option>
+				<option value="NP">Nepal</option>
+				<option value="NL">Netherlands</option>
+				<option value="NC">New Caledonia</option>
+				<option value="NZ">New Zealand</option>
+				<option value="NI">Nicaragua</option>
+				<option value="NE">Niger</option>
+				<option value="NG">Nigeria</option>
+				<option value="NU">Niue</option>
+				<option value="NF">Norfolk Island</option>
+				<option value="MP">Northern Mariana Islands</option>
+				<option value="NO">Norway</option>
+				<option value="OM">Oman</option>
+				<option value="PK">Pakistan</option>
+				<option value="PW">Palau</option>
+				<option value="PS">Palestinian Territory, Occupied</option>
+				<option value="PA">Panama</option>
+				<option value="PG">Papua New Guinea</option>
+				<option value="PY">Paraguay</option>
+				<option value="PE">Peru</option>
+				<option value="PH">Philippines</option>
+				<option value="PN">Pitcairn</option>
+				<option value="PL">Poland</option>
+				<option value="PT">Portugal</option>
+				<option value="PR">Puerto Rico</option>
+				<option value="QA">Qatar</option>
+				<option value="RE">Réunion</option>
+				<option value="RO">Romania</option>
+				<option value="RU">Russian Federation</option>
+				<option value="RW">Rwanda</option>
+				<option value="BL">Saint Barthélemy</option>
+				<option value="SH">Saint Helena, Ascension and Tristan da
+					Cunha</option>
+				<option value="KN">Saint Kitts and Nevis</option>
+				<option value="LC">Saint Lucia</option>
+				<option value="MF">Saint Martin (French part)</option>
+				<option value="PM">Saint Pierre and Miquelon</option>
+				<option value="VC">Saint Vincent and the Grenadines</option>
+				<option value="WS">Samoa</option>
+				<option value="SM">San Marino</option>
+				<option value="ST">Sao Tome and Principe</option>
+				<option value="SA">Saudi Arabia</option>
+				<option value="SN">Senegal</option>
+				<option value="RS">Serbia</option>
+				<option value="SC">Seychelles</option>
+				<option value="SL">Sierra Leone</option>
+				<option value="SG">Singapore</option>
+				<option value="SX">Sint Maarten (Dutch part)</option>
+				<option value="SK">Slovakia</option>
+				<option value="SI">Slovenia</option>
+				<option value="SB">Solomon Islands</option>
+				<option value="SO">Somalia</option>
+				<option value="ZA">South Africa</option>
+				<option value="GS">South Georgia and the South Sandwich
+					Islands</option>
+				<option value="SS">South Sudan</option>
+				<option value="ES">Spain</option>
+				<option value="LK">Sri Lanka</option>
+				<option value="SD">Sudan</option>
+				<option value="SR">Suriname</option>
+				<option value="SJ">Svalbard and Jan Mayen</option>
+				<option value="SZ">Swaziland</option>
+				<option value="SE">Sweden</option>
+				<option value="CH">Switzerland</option>
+				<option value="SY">Syrian Arab Republic</option>
+				<option value="TW">Taiwan, Province of China</option>
+				<option value="TJ">Tajikistan</option>
+				<option value="TZ">Tanzania, United Republic of</option>
+				<option value="TH">Thailand</option>
+				<option value="TL">Timor-Leste</option>
+				<option value="TG">Togo</option>
+				<option value="TK">Tokelau</option>
+				<option value="TO">Tonga</option>
+				<option value="TT">Trinidad and Tobago</option>
+				<option value="TN">Tunisia</option>
+				<option value="TR">Turkey</option>
+				<option value="TM">Turkmenistan</option>
+				<option value="TC">Turks and Caicos Islands</option>
+				<option value="TV">Tuvalu</option>
+				<option value="UG">Uganda</option>
+				<option value="UA">Ukraine</option>
+				<option value="AE">United Arab Emirates</option>
+				<option value="GB">United Kingdom</option>
+				<option value="US">United States</option>
+				<option value="UM">United States Minor Outlying Islands</option>
+				<option value="UY">Uruguay</option>
+				<option value="UZ">Uzbekistan</option>
+				<option value="VU">Vanuatu</option>
+				<option value="VE">Venezuela, Bolivarian Republic of</option>
+				<option value="VN">Viet Nam</option>
+				<option value="VG">Virgin Islands, British</option>
+				<option value="VI">Virgin Islands, U.S.</option>
+				<option value="WF">Wallis and Futuna</option>
+				<option value="EH">Western Sahara</option>
+				<option value="YE">Yemen</option>
+				<option value="ZM">Zambia</option>
+				<option value="ZW">Zimbabwe</option>
+			</select>
+		</div>
+	</div>
+	<div class="field">
+		<label>Text Area</label>
+		<textarea></textarea>
+	</div>
+	<div class="three required fields">
+		<div class="field">
+			<label>Required Input</label><input placeholder="Text Input"
+				type="text">
+		</div>
+		<div class="field">
+			<label>Required Input</label><input placeholder="Text Input"
+				type="text">
+		</div>
+		<div class="disabled field">
+			<label>Disabled Input</label><input disabled="disabled"
+				placeholder="Text Input" type="text">
+		</div>
+	</div>
+	<div class="grouped fields">
+		<label>Radio Selection</label>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input checked="checked" name="fruit" type="radio" tabindex="0"
+					class="hidden"><label>Radio Option</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio
+					Option</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio
+					Option</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio
+					Option</label>
+			</div>
+		</div>
+	</div>
+	<div class="field">
+		<label>Password</label>
+		<div class="ui left icon input">
+			<i class="lock icon"></i><input type="password">
+		</div>
+	</div>
+	<div class="inline field">
+		<div class="ui checkbox">
+			<input type="checkbox" tabindex="0" class="hidden"><label>Checkbox</label>
+		</div>
+	</div>
+	<div class="grouped inline fields">
+		<label>Inline Radio Selection</label>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input checked="checked" name="fruit" type="radio" tabindex="0"
+					class="hidden"><label>Radio Option</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio
+					Option</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio
+					Option</label>
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui radio checkbox">
+				<input name="fruit" type="radio" tabindex="0" class="hidden"><label>Radio
+					Option</label>
+			</div>
+		</div>
+	</div>
+	<div class="inline fields">
+		<div class="field">
+			<label>Multiple Inline Fields</label><input placeholder="(xxx)"
+				type="text">
+		</div>
+		<div class="field">
+			<input placeholder="xxx" type="text">
+		</div>
+		<div class="field">
+			<input placeholder="xxxx" type="text">
+		</div>
+	</div>
+	<div class="inline field">
+		<label>Inline Field</label><input placeholder="Text Input" type="text">
+	</div>
+	<h4 class="ui header">Sub-header</h4>
+	<div class="field">
+		<div class="ui toggle checkbox">
+			<input name="privacy" type="checkbox" tabindex="0" class="hidden"><label>Toggle</label>
+		</div>
+	</div>
+	<div class="field">
+		<div class="ui slider checkbox">
+			<input name="top-posts" type="checkbox" tabindex="0" class="hidden"><label>Option</label>
+		</div>
+	</div>
+	<div class="ui submit button">Submit</div>
+
+
+	<div class="ui warning form segment">
+		<div class="ui warning message">
+			<div class="header">Warning Message</div>
+			<ul class="list">
+				<li>Problem #1</li>
+				<li>Problem #2</li>
+			</ul>
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<label>Input</label><input placeholder="Text Input" type="text">
+			</div>
+			<div class="field">
+				<label>Input</label><input placeholder="Text Input" type="text">
+			</div>
+		</div>
+		<div class="ui submit button">Submit</div>
+	</div>
+	<div class="ui error form segment">
+		<div class="ui error message">
+			<div class="header">Error Message</div>
+			<p>Error message long description</p>
+		</div>
+		<div class="two fields">
+			<div class="field error">
+				<label>Errored Input</label><input placeholder="Text Input"
+					type="text">
+			</div>
+			<div class="field error">
+				<label>Errored Input</label><input placeholder="Text Input"
+					type="text">
+			</div>
+		</div>
+		<div class="ui submit button">Submit</div>
+
+	</div>
 </div>
 {% endblock %}

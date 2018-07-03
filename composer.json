@@ -26,7 +26,8 @@
 		"friendsofsymfony/user-bundle" : "~2.1",
 		"harmony-project/ui-bundle" : "~1.1",
 		"components/jquery" : "~3.3",
-		"semantic/ui" : "~2.3"
+		"semantic/ui" : "~2.3",
+		"fortawesome/font-awesome" : "~4.7"
 	},
 	"require-dev" : {
 		"symfony/debug-pack" : "*",

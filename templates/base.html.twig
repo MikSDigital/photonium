@@ -5,6 +5,7 @@
 	<title>{% block title %}{% endblock %}</title>
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('../vendor/semantic/ui/dist/semantic.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('../vendor/fortawesome/font-awesome/css/font-awesome.css') }}">
     {% block stylesheets %}
     {% endblock %}
 
@@ -42,6 +43,7 @@
 	<script src="{{ asset('../vendor/semantic/ui/dist/semantic.js') }}"></script>
 	<script type="text/javascript">
 		$('.ui.dropdown').dropdown();
+		$('.ui.checkbox').checkbox();
 	</script>
 	{% block javascripts %}
 	{% endblock %}
