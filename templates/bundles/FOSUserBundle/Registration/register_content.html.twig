@@ -1,7 +1,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="card-body">
-	<h1 class="card-title">Registro de usuario</h1>
+<div class="ui raised segment">
+	<h1 class="ui header">Registro de usuario</h1>
 
 	{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 	{{ form_row(form.nombre) }}
@@ -10,6 +10,7 @@
 	{{ form_row(form.username) }}
 
 	{{ form_widget(form) }}
+	<div class="ui divider"></div>
 	<div>
 		<input class="ui primary button" type="submit"
 			value="{{ 'registration.submit'|trans }}" formnovalidate />

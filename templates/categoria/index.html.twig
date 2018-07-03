@@ -7,7 +7,7 @@
 
     <a class="ui primary button" href="{{ path('categoria_new') }}">Nueva</a>
 
-    <table class="ui table">
+    <table class="ui selectable table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -21,8 +21,8 @@
                 <td>{{ categorium.id }}</td>
                 <td>{{ categorium.nombre }}</td>
                 <td>
-                    <a class="ui button" href="{{ path('categoria_show', {'id': categorium.id}) }}">Ver</a>
-                    <a class="ui button" href="{{ path('categoria_edit', {'id': categorium.id}) }}">Editar</a>
+                    <a class="ui icon button" href="{{ path('categoria_show', {'id': categorium.id}) }}"><i class="eye icon"></i></a>
+                    <a class="ui icon button" href="{{ path('categoria_edit', {'id': categorium.id}) }}"><i class="pencil icon"></i></a>
                 </td>
             </tr>
         {% else %}

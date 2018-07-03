@@ -1,5 +1,16 @@
+  <div class="ui calendar" id="datetime">
+    <div class="ui input left icon">
+      <i class="calendar icon"></i>
+      <input type="text" placeholder="Date/Time">
+    </div>
+  </div>
+
+
+<div class="ui raised segment">
 {{ form_start(form) }}
     {{ form_widget(form) }}
+    <div class="ui divider"></div>
     <button class="ui primary button">{{ button_label|default('Guardar') }}</button>
-    <a class="ui right floated button" href="{{ path('producto_index') }}">Volver</a>
+    <a class="ui button" href="{{ path('producto_index') }}">Volver</a>
 {{ form_end(form) }}
+</div>

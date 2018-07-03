@@ -1,5 +1,8 @@
+<div class="ui raised segment">
 {{ form_start(form) }}
     {{ form_widget(form) }}
+    <div class="ui divider"></div>
     <button class="ui primary button">{{ button_label|default('Guardar') }}</button>
     <a class="ui button" href="{{ path('categoria_index') }}">Volver</a>
 {{ form_end(form) }}
+</div>
