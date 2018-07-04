@@ -10,18 +10,23 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class DemoType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('usuario')
-            ->add('email', EmailType::class)
-            ->add('password', PasswordType::class)
+            ->add('fecha', DateTimeType::class, array(
+                'widget' => 'single_text',
+                'required' => false,
+                'attr' => array('placeholder' => 'dd/mm/aaaa'),
+            ))
             ->add('choice1', ChoiceType::class, array(
                 'expanded' => false,
                 'multiple' => false,
+                'required' => false,
+                'attr' => array('class' => 'search'),
                 'choices' => array(
                     'Uno'=>'1',
                     'Dos'=>'2',
@@ -32,7 +37,9 @@ class DemoType extends AbstractType
             ))
             ->add('choice2', ChoiceType::class, array(
                 'expanded' => false,
+                'attr' => array('class' => 'search'),
                 'multiple' => true,
+                'required' => false,
                 'choices' => array(
                     'Uno'=>'1',
                     'Dos'=>'2',
@@ -41,22 +48,22 @@ class DemoType extends AbstractType
                     'Cinco'=>'5',
                 ),
             ))
-            ->add('choice3', ChoiceType::class, array(
+            ->add('radio', ChoiceType::class, array(
                 'expanded' => true,
                 'multiple' => false,
+                'required' => false,
                 'choices' => array(
                     'Uno'=>'1',
                     'Dos'=>'2',
-                    'Tres'=>'3',
                 ),
             ))
-            ->add('choice4', ChoiceType::class, array(
+            ->add('checkbox', ChoiceType::class, array(
                 'expanded' => true,
                 'multiple' => true,
+                'required' => false,
                 'choices' => array(
                     'Uno'=>'1',
                     'Dos'=>'2',
-                    'Tres'=>'3',
                 ),
             ))
         ;

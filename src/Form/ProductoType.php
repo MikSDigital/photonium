@@ -15,6 +15,7 @@ class ProductoType extends AbstractType
         $builder
             ->add('fecha', DateTimeType::class, array(
                 'mapped'=> false,
+                'required'=>false,
                 'widget' => 'single_text',
                 'attr' => array('class' => 'datetime'),
             ))
