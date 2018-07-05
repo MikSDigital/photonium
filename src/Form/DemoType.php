@@ -66,6 +66,7 @@ class DemoType extends AbstractType
                     'Dos'=>'2',
                 ),
             ))
+            ->add('test', ExpandedOTMType::class)
         ;
     }
 

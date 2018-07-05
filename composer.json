@@ -27,7 +27,8 @@
 		"harmony-project/ui-bundle" : "~1.1",
 		"components/jquery" : "~3.3",
 		"semantic/ui" : "~2.3",
-		"fortawesome/font-awesome" : "~4.7"
+		"fortawesome/font-awesome" : "~4.7",
+		"abdielcs/expanded-collection-bundle" : "dev-master@dev"
 	},
 	"require-dev" : {
 		"symfony/debug-pack" : "*",
