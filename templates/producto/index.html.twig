@@ -24,8 +24,8 @@
                 <td>{{ producto.precio }}</td>
                 <td>{{ producto.discontinuado ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a class="ui icon button" href="{{ path('producto_show', {'id': producto.id}) }}"><i class="eye icon"></i></a>
-                    <a class="ui icon button" href="{{ path('producto_edit', {'id': producto.id}) }}"><i class="pencil icon"></i></a>
+                    <a class="ui icon button" data-content="Ver" href="{{ path('producto_show', {'id': producto.id}) }}"><i class="eye icon"></i></a>
+                    <a class="ui icon button" data-content="Editar" href="{{ path('producto_edit', {'id': producto.id}) }}"><i class="pencil icon"></i></a>
 				</td>
             </tr>
         {% else %}
