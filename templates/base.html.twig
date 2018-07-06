@@ -22,7 +22,12 @@
 		<a class="item" href="{{ path('semantic_ui') }}">Semantic UI</a>
 		<a class="item" href="{{ path('form_demo') }}">Form</a>
 		<div class="ui right dropdown item">
-			Usuario <i class="dropdown icon"></i>
+			{% if app.user %}
+				{{ app.user }}
+			{% else  %}
+				Usuario
+			{% endif %}
+			<i class="dropdown icon"></i>
 			<div class="menu">
 					    {% if not app.user %}
 						<a class="item" href="{{ path('fos_user_security_login') }}">Iniciar sesion</a>

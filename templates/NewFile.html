@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form name="producto" method="post" class="ui form">
+		<div id="producto">
+
+			<div class="field">
+				<label for="producto_fecha">Fecha</label><input type="text"
+					id="producto_fecha" name="producto[fecha]" class="datetime" />
+			</div>
+
+			<div class="required field">
+				<label for="producto_nombre" class="required">Nombre</label><input
+					type="text" id="producto_nombre" name="producto[nombre]"
+					required="required" maxlength="50" />
+			</div>
+
+			<div class="required field">
+				<label for="producto_precio" class="required">Precio</label><input
+					type="text" id="producto_precio" name="producto[precio]"
+					required="required" />
+			</div>
+
+			<div class="required field">
+				<div class="ui checkbox">
+					<input type="checkbox" id="producto_discontinuado"
+						name="producto[discontinuado]" required="required" value="1" /><label>Discontinuado</label>
+				</div>
+			</div>
+
+			<div class="required field">
+				<label for="producto_categoria" class="required">Categoria</label><select
+					id="producto_categoria" name="producto[categoria]"
+					class="ui search dropdown"><option value="1">Celulares</option>
+					<option value="2">Notebooks y PC</option>
+					<option value="3">Smart TV</option></select>
+			</div>
+
+			<input type="hidden" id="producto__token" name="producto[_token]"
+				value="7mSI3u3FV7-l5hF2S51_H39Ljx7kGtXwUv0iqcVyevM" />
+		</div>
+		<div class="ui divider"></div>
+		<button class="ui primary button">Guardar</button>
+		<a class="ui button" href="/photonium/public/index.php/producto/">Volver</a>
+	</form>
+</body>
+</html>

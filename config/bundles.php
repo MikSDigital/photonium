@@ -16,5 +16,5 @@ return [
     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
     FOS\UserBundle\FOSUserBundle::class => ['all' => true],
     Harmony\Bundle\UiBundle\HarmonyUiBundle::class => ['all' => true],
-    abdielcs\ExpandedCollectionBundle\ExpandedCollectionBundle::class => ['all' => true],
+    Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
 ];

@@ -1,8 +1,4 @@
 datetime
 date
 time
-singleselect
-singleselect_input
-multiselect
-multiselect_input
 
