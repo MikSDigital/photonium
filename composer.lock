@@ -4,8 +4,59 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a1ad7bcb45d9b72fed59ea6c90bfc02",
+    "content-hash": "b4858168aea461a4f3db1121501f614a",
     "packages": [
+        {
+            "name": "abdielcs/expanded-collection-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/abdielcs/ExpandedCollectionBundle.git",
+                "reference": "c03ab0754db8be90d8256d6ca6ee4a0438a0ed96"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/abdielcs/ExpandedCollectionBundle/zipball/c03ab0754db8be90d8256d6ca6ee4a0438a0ed96",
+                "reference": "c03ab0754db8be90d8256d6ca6ee4a0438a0ed96",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/framework-bundle": "~2.3|~3.0|~4.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "abdielcs\\ExpandedCollectionBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abdiel Carrazana",
+                    "email": "abdielcs@gmail.com"
+                }
+            ],
+            "description": "Symfony 2 and 3 bundle for rendering a collection of entities as an expanded selectable list",
+            "keywords": [
+                "Symfony2",
+                "checkbox",
+                "collection",
+                "expanded",
+                "form",
+                "list",
+                "multiple",
+                "symfony3"
+            ],
+            "time": "2018-06-11T13:09:40+00:00"
+        },
         {
             "name": "components/jquery",
             "version": "3.3.1",
@@ -6169,7 +6220,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "symfony/lts": 20
+        "symfony/lts": 20,
+        "abdielcs/expanded-collection-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

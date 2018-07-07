@@ -1,4 +1,7 @@
 {
+    "abdielcs/expanded-collection-bundle": {
+        "version": "0.1.x-dev"
+    },
     "components/jquery": {
         "version": "3.3.1"
     },

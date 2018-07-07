@@ -35,6 +35,11 @@ class Producto
      * @ORM\ManyToOne(targetEntity="App\Entity\Categoria", inversedBy="productos")
      */
     private $categoria;
+    
+    public function __toString()
+    {
+        return $this->nombre;
+    }
 
     public function getId()
     {

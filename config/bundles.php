@@ -17,4 +17,5 @@ return [
     FOS\UserBundle\FOSUserBundle::class => ['all' => true],
     Harmony\Bundle\UiBundle\HarmonyUiBundle::class => ['all' => true],
     Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
+    abdielcs\ExpandedCollectionBundle\ExpandedCollectionBundle::class => ['all' => true],
 ];
