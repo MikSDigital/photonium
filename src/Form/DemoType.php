@@ -21,8 +21,17 @@ class DemoType extends AbstractType
     {
         $builder
             ->add('coleccion', ExpandedOTMType::class, array(
+                'attr' => array('class'=>'ui table'),
                 'class'=>Producto::class,
-                'fields' => array('nombre', 'precio', 'discontinuado'),
+                'fields' => array(
+                    'nombre', 
+                    'precio', 
+                    array(
+                        'property' => 'discontinuado',
+                        'type' => 'boolean',
+                        'options' => array('true'=>'Si', 'false'=>'No')
+                    ),
+                )
             ))
             ->add('fecha', DateTimeType::class, array(
                 'widget' => 'single_text',
