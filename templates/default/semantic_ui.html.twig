@@ -7,7 +7,8 @@
 <script>
 	$(document).ready(
 			function() {
-
+				$('.menu .item').tab();
+				
 				$('.button.follow').state({
 					text : {
 						inactive : 'Follow',
@@ -485,6 +486,23 @@
 
 <h1>Menus</h1>
 <div class="ui segment">
+
+<div class="ui top attached tabular menu">
+  <a class="item" data-tab="first">First</a>
+  <a class="item" data-tab="second">Second</a>
+  <a class="item active" data-tab="third">Third</a>
+</div>
+<div class="ui bottom attached tab segment" data-tab="first">
+  First
+</div>
+<div class="ui bottom attached tab segment" data-tab="second">
+  Second
+</div>
+<div class="ui bottom attached tab segment active" data-tab="third">
+  Third
+</div>
+
+
 	<div class="ui three item menu">
 		<a class="active item"> A</a><a class="item"> B</a><a class="item">
 			C</a>
@@ -501,8 +519,16 @@
 		</div>
 	</div>
 	<div class="ui tabular menu">
-		<a class="active item"> Tab</a><a class="item"> Tab</a>
-	</div>
+		<a class="active item" data-tab="tab-name"> Tab</a>
+		<a class="item" data-tab="tab-name2"> Tab</a>
+<div class="ui tab" data-tab="tab-name">
+  <!-- Tab Content !-->
+  Tab1
+</div>
+<div class="ui tab" data-tab="tab-name2">
+  <!-- Tab Content !-->
+  Tab2
+</div>	</div>
 	<div class="ui text demo menu">
 		<a class="active item"> A</a><a class="item"> B</a><a class="item">
 			C</a>
