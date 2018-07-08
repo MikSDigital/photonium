@@ -1,42 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{#
-{% form_theme form '@ExpandedCollection/Form/fields.html.twig' %}
-#}
-{% form_theme form '@ExpandedCollection/Form/semantic-ui_fields.html.twig' %}
+{% form_theme form.fecha _self %}
+{% form_theme form.coleccion '@ExpandedCollection/Form/semantic-ui_fields.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block datetime_widget %}
+	<div class="ui field calendar" id="example1">
+		<div class="ui input">
+			<input type="text" placeholder="dd/mm/yyyy">
+		</div>
+	</div>
+{% endblock %}
 
 {% block body %}
 <h1 class="ui header">Form demo</h1>
 <div class="ui raised segment">
 	{{ form_start(form) }}
-
-	<div class="ui field calendar" id="example1">
-		<label for="">TEST_Fecha</label>
-		<div class="ui input">
-			<input type="text" placeholder="Date/Time">
-		</div>
-	</div>
-	<div class="field">
-		<label for="">TEST_Texto</label>
-		<input type="text" id="" name="" />
-	</div>
-
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
+	{{ form_widget(form) }}
+	{{ form_end(form) }}
 </div>
 {% endblock %}
 
 {% block stylesheets %}
-<link href="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.css" rel="stylesheet" type="text/css" />
+<link
+	href="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.css"
+	rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block javascripts %}
-<script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script>
+<script
+	src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script>
 <script type="text/javascript">
-$('#example1').calendar();
-$('.datetime').calendar();
+	$('#example1').calendar();
 </script>
 {%  endblock %}
 
