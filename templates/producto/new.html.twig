@@ -2,11 +2,34 @@
 
 {% block title %}New Producto{% endblock %}
 
-{% endblock %}
-
 {% block body %}
     <h1>Nuevo Producto</h1>
 
     {{ include('producto/_form.html.twig') }}
 
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+
+	$('.ui.form').form({
+		on : 'blur',
+		fields : {
+			producto_nombre : {
+				identifier : 'producto_nombre',
+				rules : [ {
+					type : 'empty',
+					prompt : 'Please enter some text'
+				} ]
+			},
+			producto_precio : {
+				identifier : 'producto_precio',
+				rules : [ {
+					type : 'decimal',
+					prompt : 'Please enter some text'
+				} ]
+			},
+		}
+	});
+</script>
 {% endblock %}

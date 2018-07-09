@@ -1995,16 +1995,16 @@
         },
         {
             "name": "semantic/ui",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Semantic-Org/Semantic-UI.git",
-                "reference": "d8b8461f1b472dafe5090a824c1e11498dcd26a3"
+                "reference": "146d960a249d43d68ce78dffb3e1abf3b00b1f1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Semantic-Org/Semantic-UI/zipball/d8b8461f1b472dafe5090a824c1e11498dcd26a3",
-                "reference": "d8b8461f1b472dafe5090a824c1e11498dcd26a3",
+                "url": "https://api.github.com/repos/Semantic-Org/Semantic-UI/zipball/146d960a249d43d68ce78dffb3e1abf3b00b1f1d",
+                "reference": "146d960a249d43d68ce78dffb3e1abf3b00b1f1d",
                 "shasum": ""
             },
             "type": "library",
@@ -2028,7 +2028,7 @@
                 "semantic",
                 "ui"
             ],
-            "time": "2018-06-18T04:14:19+00:00"
+            "time": "2018-07-09T00:12:38+00:00"
         },
         {
             "name": "sensio/framework-extra-bundle",
