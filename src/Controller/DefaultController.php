@@ -19,15 +19,6 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/semantic_ui", name="semantic_ui")
-     */
-    public function uiButtons()
-    {
-        return $this->render('default/semantic_ui.html.twig', [
-        ]);
-    }
-    
-    /**
      * @Route("/form", name="form_demo")
      */
     public function forms()

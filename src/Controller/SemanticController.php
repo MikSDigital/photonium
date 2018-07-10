@@ -21,6 +21,16 @@ class SemanticController extends Controller
     }
 
     /**
+     * @Route("/elements", name="semantic_elements")
+     */
+    public function uiElements()
+    {
+        return $this->render('semantic/elements.html.twig', [
+        ]);
+    }
+    
+    
+    /**
      * @Route("/modules", name="semantic_modules")
      */
     public function modules()

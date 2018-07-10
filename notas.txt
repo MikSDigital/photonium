@@ -1,4 +1,6 @@
-datetime
-date
-time
 
+fecha
+autor
+novedad
+camaras
+informes

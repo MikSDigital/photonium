@@ -21,12 +21,18 @@ class DemoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('fecha', DateTimeType::class, array(
+                'widget' => 'single_text',
+                'required' => false,
+                'attr' => array('placeholder' => 'dd/mm/aaaa'),
+            ))
+            ->add('texto')
             ->add('coleccion', ExpandedOTMType::class, array(
                 'attr' => array('class'=>'ui table'),
                 'class'=>Producto::class,
                 'fields' => array(
-                    'nombre', 
-                    'precio', 
+                    'nombre',
+                    'precio',
                     array(
                         'property' => 'discontinuado',
                         'type' => 'boolean',
@@ -34,13 +40,7 @@ class DemoType extends AbstractType
                     ),
                 )
             ))
-            ->add('fecha', DateTimeType::class, array(
-                'widget' => 'single_text',
-                'required' => false,
-                'attr' => array('placeholder' => 'dd/mm/aaaa'),
-            ))
-            ->add('texto')
-        ;
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
