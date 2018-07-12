@@ -1,18 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Producto{% endblock %}
+{% block title %}
+New Producto
+{% endblock %}
 
 {% block body %}
-    <h1>Nuevo Producto</h1>
+<h1>Nuevo Producto</h1>
 
-    {{ include('producto/_form.html.twig') }}
+{{ include('producto/_form.html.twig') }}
 
 {% endblock %}
 
 {% block javascripts %}
 <script type="text/javascript">
-
-	$('.ui.form').form({
+	$('.ui.dropdown').dropdown({
+		allowAdditions : true
+	});
+	
+	$('not.ui.form').form({
 		on : 'blur',
 		fields : {
 			producto_nombre : {
