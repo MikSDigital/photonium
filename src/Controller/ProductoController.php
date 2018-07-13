@@ -65,7 +65,7 @@ class ProductoController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('producto_edit', ['id' => $producto->getId()]);
+            return $this->redirectToRoute('producto_index');
         }
 
         return $this->render('producto/edit.html.twig', [
