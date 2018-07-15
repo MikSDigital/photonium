@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1 class="ui header">Camara</h1>
+
+    <table class="ui table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ camara.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ camara.nombre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="ui button" href="{{ path('camara_index') }}">Volver</a>
+    <a class="ui button" href="{{ path('camara_edit', {'id': camara.id}) }}">editar</a>
+{% endblock %}

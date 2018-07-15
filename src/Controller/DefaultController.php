@@ -29,4 +29,13 @@ class DefaultController extends Controller
         ]);
     }
     
+    /**
+     * @Route("/test", name="test")
+     */
+    public function test()
+    {
+        return $this->render('default/test.html.twig', [
+        ]);
+    }
+    
 }
