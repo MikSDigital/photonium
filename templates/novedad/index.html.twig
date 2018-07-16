@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1 class="ui header">Novedades</h1>
+
+    <a class="ui primary button" href="{{ path('novedad_new') }}">Agregar</a>
+
+    <table class="ui table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fecha</th>
+                <th>Descripcion</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for novedad in novedads %}
+            <tr>
+                <td>{{ novedad.id }}</td>
+                <td>{{ novedad.fecha ? novedad.fecha|date('Y-m-d H:i') : '' }}</td>
+                <td>{{ novedad.descripcion }}</td>
+                <td>
+                    <a class="ui basic button"  href="{{ path('novedad_show', {'id': novedad.id}) }}">ver</a>
+                    <a class="ui basic button"  href="{{ path('novedad_edit', {'id': novedad.id}) }}">editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

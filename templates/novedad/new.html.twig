@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1 class="ui header">Novedad</h1>
+    {{ include('novedad/_form.html.twig') }}
+      <div class="ui error message"></div>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+$('.ui.form')
+.form({
+    on: 'submit',
+  fields: {
+	  novedad_fecha: 'empty',
+	  novedad_descripcion: 'empty',
+  }
+})
+;
+</script>
+	{#
+    name     : 'empty',
+    gender   : 'empty',
+    username : 'empty',
+    password : ['minLength[6]', 'empty'],
+    skills   : ['minCount[2]', 'empty'],
+    terms    : 'checked'
+    #}
+{% endblock %}
