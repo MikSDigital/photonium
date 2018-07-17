@@ -16,7 +16,7 @@ New Producto
 	$('.ui.dropdown').dropdown({
 		allowAdditions : true
 	});
-	
+
 	$('not.ui.form').form({
 		on : 'blur',
 		fields : {
@@ -36,5 +36,14 @@ New Producto
 			},
 		}
 	});
+
+	$("#test").click(function() {
+		$(".test").modal('show');
+	});
+	$(".test").modal({
+		closable : true
+	});
 </script>
+
+
 {% endblock %}

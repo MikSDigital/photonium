@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demo{% endblock %}
+
+{% block body %}
+    <h1>Demo</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ demo.id }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ demo.fecha ? demo.fecha|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ demo.descripcion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('demo_index') }}">back to list</a>
+
+    <a href="{{ path('demo_edit', {'id': demo.id}) }}">edit</a>
+
+    {{ include('demo/_delete_form.html.twig') }}
+{% endblock %}

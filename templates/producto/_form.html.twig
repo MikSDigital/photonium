@@ -1,8 +1,31 @@
 <div class="ui raised segment">
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <div class="ui divider"></div>
-    <button class="ui primary button" formnovalidate>{{ button_label|default('Guardar') }}</button>
-    <a class="ui button" href="{{ path('producto_index') }}">Volver</a>
-{{ form_end(form) }}
+	{{ form_start(form) }}
+	{{ form_widget(form) }}
+	<button type="button" class="ui button" id="test">Modal</button>
+	<div class="ui divider"></div>
+	<button class="ui primary button" formnovalidate>
+		{{ button_label|default('Guardar') }}
+	</button>
+	<a class="ui button" href="{{ path('producto_index') }}">Volver</a>
+	{{ form_end(form) }}
 </div>
+
+<div class="ui tiny modal test">
+	<i class="close icon"></i>
+	<div class="header">Nueva categoria</div>
+	<div class="content">
+		<div class="description">
+		<form action="" class="ui form">
+			<div class="ui field">
+			<label>Nombre</label>
+			<input type="text"></input>
+			</div>
+		</form>
+		</div>
+	</div>
+	<div class="actions">
+		<div class="ui positive button">Aceptar</div>
+		<div class="ui black deny button">No</div>
+	</div>
+</div>
+
