@@ -1,0 +1,7 @@
+NOVEDAD
+{
+	fecha
+	descripcion
+	autor
+	informe
+}
