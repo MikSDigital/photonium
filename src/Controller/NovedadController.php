@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * @Route("/novedad")
@@ -28,6 +29,11 @@ class NovedadController extends Controller
      */
     public function new(Request $request): Response
     {
+        if($request->isXmlHttpRequest())
+        {
+            return new JsonResponse("Hello JsonResponse");    
+        }
+        
         $novedad = new Novedad();
         $novedad->setFecha(new \DateTime());
         $form = $this->createForm(NovedadType::class, $novedad);
