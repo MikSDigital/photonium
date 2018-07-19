@@ -31,7 +31,8 @@ class NovedadController extends Controller
     {
         if($request->isXmlHttpRequest())
         {
-            return new JsonResponse("Hello JsonResponse");    
+//             return $this->redirectToRoute('novedad_index');
+            return new JsonResponse("Hello JsonResponse", 200);    
         }
         
         $novedad = new Novedad();
