@@ -1,7 +1,5 @@
-NOVEDAD
-{
-	fecha
-	descripcion
-	autor
-	informe
-}
+NOTA       (fecha, descripcion, autor)
+CAMARA     (nombre)
+OBSERVACION(nombre, camaras, novedades)
+
+NOTA  <<-------> OBSERVACION <<------>> CAMARA
