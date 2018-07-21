@@ -1,7 +1,7 @@
 {% extends '@ExpandedCollection/Form/fields.html.twig' %}
 
 {%- block checkbox_widget -%}
-<div class="ui checkbox">
+<div class="ui toggle checkbox">
         <input type="checkbox" {{ block('widget_attributes') }}
         {% if value is defined %} 
         	value="{{ value }}"

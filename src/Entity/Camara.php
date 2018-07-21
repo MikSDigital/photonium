@@ -34,6 +34,11 @@ class Camara
     {
         $this->incidentes = new ArrayCollection();
     }
+    
+    public function __toString()
+    {
+        return $this->nombre;
+    }
 
     public function getId()
     {

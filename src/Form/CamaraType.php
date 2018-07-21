@@ -13,7 +13,7 @@ class CamaraType extends AbstractType
     {
         $builder
             ->add('nombre')
-            ->add('incidentes')
+//             ->add('incidentes')
         ;
     }
 

@@ -19,7 +19,9 @@
         {% for incidente in incidentes %}
             <tr>
                 <td>{{ incidente.id }}</td>
-                <td>{{ incidente.descripcion }}</td>
+                <td>
+                	<a href="{{ path('incidente_board', {'id': incidente.id}) }}">{{ incidente.descripcion }}</a>              
+                </td>
                 <td>
                     <a href="{{ path('incidente_show', {'id': incidente.id}) }}">ver</a>
                     <a href="{{ path('incidente_edit', {'id': incidente.id}) }}">editar</a>

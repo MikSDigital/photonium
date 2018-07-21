@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Form\IncidenteBoardType;
 
 /**
  * @Route("/incidente")
@@ -87,4 +88,29 @@ class IncidenteController extends Controller
 
         return $this->redirectToRoute('incidente_index');
     }
+
+    /**
+     * @Route("/{id}/board", name="incidente_board", methods="GET|POST")
+     */
+    public function board(Request $request, Incidente $incidente): Response
+    {
+//         $incidente = new Incidente();
+        $form = $this->createForm(IncidenteBoardType::class, $incidente);
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($incidente);
+            $em->flush();
+            
+            return $this->redirectToRoute('incidente_index');
+        }
+        
+        return $this->render('incidente/board.html.twig', [
+            'incidente' => $incidente,
+            'form' => $form->createView(),
+        ]);
+    }
+    
+    
 }
