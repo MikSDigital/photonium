@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Incidente{% endblock %}
+
+{% block body %}
+    <h1 class="ui header">Incidente</h1>
+
+    <table class="ui table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ incidente.id }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ incidente.descripcion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="ui primary button" href="{{ path('incidente_index') }}">Volver</a>
+    <a class="ui button" href="{{ path('incidente_edit', {'id': incidente.id}) }}">Editar</a>
+{% endblock %}

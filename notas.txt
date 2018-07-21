@@ -1,5 +1,5 @@
-NOTA       (fecha, descripcion, autor)
-CAMARA     (nombre)
-OBSERVACION(nombre, camaras, novedades)
+NOTA     (fecha, descripcion, autor)
+CAMARA   (nombre, incidentes)
+INCIDENTE(nombre, camaras, novedades)
 
-NOTA  <<-------> OBSERVACION <<------>> CAMARA
+NOTA  <<-------> INCIDENTE <<------>> CAMARA

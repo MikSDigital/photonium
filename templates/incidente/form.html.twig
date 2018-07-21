@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Incidente{% endblock %}
+
+{% block body %}
+    <h1 class="ui header">Detalle de Incidente</h1>
+
+<div class="ui raised segment">
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+	<div class="ui divider"></div>
+    <button class="ui primary button" formnovalidate>{{ button_label|default('Guardar') }}</button>
+    <a class="ui button" href="{{ path('incidente_index') }}">Volver</a>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Camara index{% endblock %}
+
+{% block body %}
+    <h1 class="ui header">Camaras</h1>
+
+    <a  class="ui primary button" href="{{ path('camara_new') }}">Agregar</a>
+
+    <table class="ui table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for camara in camaras %}
+            <tr>
+                <td>{{ camara.id }}</td>
+                <td>{{ camara.nombre }}</td>
+                <td>
+                    <a href="{{ path('camara_show', {'id': camara.id}) }}">ver</a>
+                    <a href="{{ path('camara_edit', {'id': camara.id}) }}">editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">sin datos</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
