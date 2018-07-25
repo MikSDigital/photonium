@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Asunto index{% endblock %}
+
+{% block body %}
+    <h1 class="ui header">Controles</h1>
+
+    <a class="ui primary button" href="{{ path('asunto_new') }}">Agregar</a>
+
+    <table class="ui table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for asunto in asuntos %}
+            <tr>
+                <td>{{ asunto.id }}</td>
+                <td>{{ asunto.nombre }}</td>
+                <td>
+                    <a href="{{ path('asunto_show', {'id': asunto.id}) }}">ver</a>
+                    <a href="{{ path('asunto_edit', {'id': asunto.id}) }}">editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no hat datos</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
