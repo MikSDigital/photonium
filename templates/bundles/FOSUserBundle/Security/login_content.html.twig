@@ -7,7 +7,11 @@
 {% endif %}
 
 <div class="ui raised segment form">
-	<h1 class="ui header">Inicio de sesion</h1>
+	<h2 class="ui dividing header">
+		<i class="user icon"></i>
+		<div class="content">Inicio de sesi&oacuten</div>
+	</h2>
+
 	<form action="{{ path("fos_user_security_check") }}" method="post">
 		{% if csrf_token %}
 		<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />

@@ -1,8 +1,12 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="card-body">
-	<h1 class="ui header">Mi perfil</h1>
-	<table class="ui table">
+<div class="ui raised segment">
+	<h2 class="ui dividing header">
+		<i class="user icon"></i>
+		<div class="content">Mi perfil</div>
+	</h2>
+
+	<table class="ui very basic table">
 		<tr>
 			<th>Usuario</th>
 			<td>{{ user.username }}</td>
@@ -16,8 +20,9 @@
 			<td>{{ user.nombre }} {{ user.apellido }} &nbsp</td>
 		</tr>
 	</table>
+    <div class="ui divider"></div>
 
 	<a href="{{ path('fos_user_profile_edit') }}" class="ui primary button">Editar</a>
-	<a href="{{ path('fos_user_change_password') }}" class="ui button">Cambiar clave</a>
+	<a href="{{ path('fos_user_change_password') }}" class="ui button">Cambiar contrase&ntildea</a>
 </div>
 

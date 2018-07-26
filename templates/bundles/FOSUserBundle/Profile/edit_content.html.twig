@@ -1,7 +1,11 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <div class="ui raised segment">
-	<h1 class="ui header">Datos de usuario</h1>
+	<h2 class="ui dividing header">
+		<i class="user icon"></i>
+		<div class="content">Mi cuenta</div>
+	</h2>
+
 	{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
 	{{ form_row(form.nombre) }}
 	{{ form_row(form.apellido) }}
