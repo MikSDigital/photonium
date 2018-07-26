@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use App\Form\DemoType;
 
 class DefaultController extends Controller
 {
@@ -18,24 +17,5 @@ class DefaultController extends Controller
         ]);
     }
 
-    /**
-     * @Route("/form", name="form_demo")
-     */
-    public function forms()
-    {
-        $form = $this->createForm(DemoType::class);
-        return $this->render('default/form_demo.html.twig', [
-            'form' => $form->createView(),
-        ]);
-    }
-    
-    /**
-     * @Route("/test", name="test")
-     */
-    public function test()
-    {
-        return $this->render('default/test.html.twig', [
-        ]);
-    }
     
 }

@@ -17,24 +17,19 @@
 			<h3>Portada</h3>
 			</a>
 		</div>
-		<a class="item" href="{{ path('asunto_index') }}">Controles</a>
-		<a class="item" href="{{ path('novedad_index') }}">Novedades</a>
-		<a class="item" href="{{ path('camara_index') }}">Camaras</a>
-		<a class="item" href="{{ path('incidente_index') }}">Incidentes</a>
 		{#
 		<a class="item" href="{{ path('producto_index') }}">Productos</a>
 		<a class="item" href="{{ path('categoria_index') }}">Categorias</a>
 		#}
 		<div class="ui dropdown item">
-		Semantic-UI
+		Menu
 			<i class="dropdown icon"></i>
 			<div class="menu">
-				<a class="item" href="{{ path('semantic_elements') }}">Elementos</a>
-				<a class="item" href="{{ path('semantic_modules') }}">Modulos</a>
-				<a class="item" href="{{ path('test') }}">Test</a>
+				<a class="item" href="#">Menu item</a>
+				<a class="item" href="#">Menu item</a>
+				<a class="item" href="#">Menu item</a>
 			</div>
 		</div>
-		<a class="item" href="{{ path('form_demo') }}">Form</a>
 		<div class="ui right dropdown item">
 			{% if app.user %}
 				{{ app.user }}
