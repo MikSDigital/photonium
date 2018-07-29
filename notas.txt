@@ -1,5 +1,5 @@
-ASUNTO	(nombre)
+CONTROL	(nombre)
 CAMARA	(nombre)
-NOVEDAD	(fecha, asunto, camara, detalle, autor)
+EVENTO	(fecha, novedad, camara, descripcion, autor)
 
-ASUNTO <--->> NOVEDAD <<--- CAMARA
+CONTROL <--->> EVENTO <<--- CAMARA
