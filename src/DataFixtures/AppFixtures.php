@@ -19,12 +19,12 @@ class AppFixtures extends Fixture
             $manager->persist($entity);            
         }
 
-//         for($i = 1; $i < 10; $i++)
-//         {
-//             $entity = new ();
-//             $entity->setNombre('IP ' . $i);
-//             $manager->persist($entity);
-//         }
+        for($i = 1; $i < 10; $i++)
+        {
+            $entity = new Camara();
+            $entity->setNombre('IP ' . $i);
+            $manager->persist($entity);
+        }
         
         // $product = new Product();
         // $manager->persist($product);
